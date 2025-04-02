@@ -33,4 +33,21 @@ public class StackLL<T extends Comparable<T>> implements IStack<T> {
     public boolean isEmpty() {
         return items.isEmpty();
     }
+
+    @Override
+    public String toString() {
+        // Added to help debug your program, feel free to change if you see fit
+        if (items.isEmpty()) {
+            return "empty";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("top %s", items.get(0)));
+
+        for (int i = 1; i < items.size(); i++) {
+            sb.append(String.format(" -> %s", items.get(i)));
+        }
+
+        return sb.toString();
+    }
 }
